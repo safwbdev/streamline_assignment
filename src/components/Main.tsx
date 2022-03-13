@@ -15,7 +15,7 @@ const Main = () => {
   let currentVote = getVideo.length ? getVideo[getVideo.length - 1].vote : null;
 
   useEffect(() => {
-    if(getVideo){
+    if(currentVideoId){
     setVideoId(currentVideoId);}
   }, [currentVideoId]);
 
