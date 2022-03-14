@@ -19,6 +19,7 @@
     "animate.css": "^4.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-full-screen": "^1.1.0",
     "react-redux": "^7.2.6",
     "react-scripts": "5.0.0",
     "react-youtube": "^7.14.0",

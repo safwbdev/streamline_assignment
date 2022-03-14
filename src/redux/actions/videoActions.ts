@@ -1,4 +1,4 @@
-import { LIKE_VIDEO, videoType } from "./actionTypes";
+import { CLEAR_ALL, LIKE_VIDEO, videoType } from "./actionTypes";
 import { DISLIKE_VIDEO } from "./actionTypes";
 import { ADD_VIDEO } from "./actionTypes";
 
@@ -10,4 +10,7 @@ export const likeVideo = (id:string) => {
 };
 export const dislikeVideo = (id:string) => {
   return { type: DISLIKE_VIDEO, id: id };
+};
+export const clearAll = () => {
+  return { type: CLEAR_ALL };
 };

@@ -8,6 +8,7 @@ export const FORM_SUBMIT_TEXT = "Change";
 // HISTORY AREA 
 export const HISTORY_SHOW = "Show History";
 export const HISTORY_HIDE = "Hide History";
+export const HISTORY_CLEAR = "Clear History";
 
 // INSTRUCTION AREA 
 export const INSTRUCTION_TITLE = "Instructions";

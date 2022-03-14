@@ -18,7 +18,7 @@ const Instructions = () => {
       </Typography>
       <ol>
         <li> {INSTRUCTION_A}</li>
-        <p>{EXAMPLE}</p>
+        <p className="sample">{EXAMPLE}</p>
         <li> {INSTRUCTION_B}</li>
         <p>{INSTRUCTION_NOTE}</p>
         <li> {INSTRUCTION_C}</li>

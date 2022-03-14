@@ -32,7 +32,7 @@ const FormArea = () => {
         fullWidth
         onClick={handleSubmit}
         variant="contained"
-        disabled={newId.length < 11}
+        disabled={newId.length !== 11}
       >
         {FORM_SUBMIT_TEXT}
       </Button>

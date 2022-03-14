@@ -1,4 +1,4 @@
-import { ADD_VIDEO, DISLIKE_VIDEO, LIKE_VIDEO, videoDispatchTypes, videoType } from "../actions/actionTypes";
+import { ADD_VIDEO, CLEAR_ALL, DISLIKE_VIDEO, LIKE_VIDEO, videoDispatchTypes, videoType } from "../actions/actionTypes";
 
 const addVideo = (state:any, data:videoType) => state.concat([data]);
 
@@ -21,6 +21,8 @@ const videoReducer = (state = [], action:videoDispatchTypes) => {
       return vote(state, action.id.toString(), true);
     case DISLIKE_VIDEO:
       return vote(state, action.id.toString(), false);
+    case CLEAR_ALL:
+      return []
     default:
       return state;
   }

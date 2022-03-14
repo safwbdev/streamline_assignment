@@ -1,6 +1,9 @@
 body {
   background-color: rgb(0, 30, 60);
 }
+.fullscreen-enabled {
+  background-color: rgb(0, 30, 60);
+}
 .content {
   padding: 2em 0;
 }
@@ -28,6 +31,9 @@ body {
 .instructionsBox ol p {
   font-style: italic;
 }
+.videoPlaceholder .instructionsBox ol li {
+  margin: 1em 0;
+}
 .mobileModal {
   display: none;
 }
@@ -35,6 +41,7 @@ body {
   color: #ffffff;
   border: 1px solid #ffffff;
 }
+
 @media only screen and (max-width: 768px) {
   .videoArea iframe {
     border-radius: 0;
@@ -73,5 +80,11 @@ body {
   }
   .mobileModal {
     display: block;
+  }
+  .fullScreenButton {
+    display: none !important;
+  }
+  .instructionsBox ol p:not(.sample) {
+    display: none;
   }
 }

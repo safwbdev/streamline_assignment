@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Avatar,
   Button,
@@ -13,29 +13,48 @@ import { green, red } from "@mui/material/colors";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 import { RootState } from "../redux/reducers/rootReducer";
-import { HISTORY_HIDE, HISTORY_SHOW } from "../constants/lang";
-
+import { HISTORY_CLEAR, HISTORY_HIDE, HISTORY_SHOW } from "../constants/lang";
+import { clearAll } from "../redux/actions/videoActions";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import ClearAll from "@mui/icons-material/ClearAll";
 
 const HistoryArea = () => {
   const [show, setShow] = useState(false);
   const getList = useSelector((state: RootState) => state.videos);
-  
+  const dispatch = useDispatch();
+
+  const handleClear = () => dispatch(clearAll());
+
   const likedColor = { bgcolor: green[500] };
   const dislikedColor = { bgcolor: red[500] };
 
   const HideHeader = () => {
     if (getList.length && getList[0].vote !== null && getList[0].vote !== "") {
-      return(
-      <Grid container spacing={3} marginTop={0} justifyContent="center">
-        <Grid item>
-          <Divider className="test">
-          <Button variant="contained" onClick={() => setShow(!show)}>
-            {show ? HISTORY_SHOW : HISTORY_HIDE} 
-          </Button>
-          </Divider>
+      return (
+        <Grid container spacing={3} marginTop={0} justifyContent="center">
+          <Grid item>
+            <Divider className="test">
+              <Button
+                variant="contained"
+                onClick={() => setShow(!show)}
+                startIcon={show ? <Visibility /> : <VisibilityOff />}
+              >
+                {show ? HISTORY_SHOW : HISTORY_HIDE}
+              </Button>
+              <Button
+                variant="contained"
+                sx={{ marginLeft: 1 }}
+                onClick={() => handleClear()}
+                startIcon={<ClearAll />}
+              >
+                {HISTORY_CLEAR}
+              </Button>
+            </Divider>
+          </Grid>
         </Grid>
-      </Grid>);
-    }else{
+      );
+    } else {
       return null;
     }
   };
